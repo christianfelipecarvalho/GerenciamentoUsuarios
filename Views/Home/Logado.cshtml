@@ -1,0 +1,11 @@
+﻿@model HomeModel
+@{
+    ViewData["Usuario"] = "Logado";
+}
+
+<div>
+    <h1>Bem vindo(a) </h1>
+    <a role="button" class="btn btn-primary" asp-controller="Usuario" asp-action="Index">Ver usuarios cadastrados</a>
+    <a role="button" class="btn btn-primary" asp-controller="Usuario" asp-action="Criar">Adicionar novo usuario</a>
+    <a class="btn btn-secondary" asp-controller="Home" asp-action="Index" role="button">Sair</a>
+</div>

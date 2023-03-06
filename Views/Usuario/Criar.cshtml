@@ -1,0 +1,46 @@
+﻿@model UsuarioModel
+@{
+    ViewData["Title"] = "Criar usuário";
+}
+@section scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('usuario.cpf').mask('000.000.0000-00');
+        });
+    </script>
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Cadastrar usuario</h1>
+
+</div>
+<form ng-controller="UsuarioCadastro" asp-controller="Usuario" asp-action="Criar" method="post">
+    <div class="form-group">
+        <label for="Nome" class="form-label">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite aqui o nome" required ng-model="Nome">
+    </div>
+    <div class="form-group">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="text" asp-for="Email" class="form-control" placeholder="Digite aqui o e-mail">
+    </div>
+    <div class="form-group">
+        <label for="celular" class="form-label">Celular</label>
+        <input type="text" asp-for="Celular" class="form-control" placeholder="Digite aqui o telefone">
+    </div>
+    <div class="form-group">
+        <label for="cpf" class="form-label">CPF</label>
+        <input type="text" asp-for="Cpf" class="form-control" placeholder="Digite aqui o CPF" required ng-model="Cpf">
+    </div>
+    <div class="form-group">
+        <label for="endereço" class="form-label">Endereço</label>
+        <input type="text" asp-for="Endereco" class="form-control" placeholder="Digite aqui o Endereço">
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-primary" ng-click="adicionarUsuario()">Salvar</button>
+
+    <a class="btn btn-secondary" asp-controller="Usuario" asp-action="Index" role="button">Voltar</a>
+</form>

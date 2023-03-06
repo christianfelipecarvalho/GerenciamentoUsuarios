@@ -1,0 +1,41 @@
+﻿@model UsuarioModel
+@{
+    ViewData["Title"] = "Editar usuário";
+}
+
+
+<div class="text-center">
+
+
+    <h1 class="display-4">Editar usuario</h1>
+
+</div>
+<form asp-controller="Usuario" asp-action="Alterar" method="post">
+
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label for="Nome" class="form-label">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite aqui o nome" required>
+    </div>
+    <div class="form-group">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="text" asp-for="Email" class="form-control" placeholder="Digite aqui o e-mail">
+    </div>
+    <div class="form-group">
+        <label for="celular" class="form-label">Celular</label>
+        <input type="text" asp-for="Celular" class="form-control" placeholder="Digite aqui o telefone">
+    </div>
+    <div class="form-group">
+        <label for="cpf" class="form-label">CPF</label>
+        <input type="text" asp-for="Cpf" class="form-control" placeholder="Digite aqui o CPF" required>
+    </div>
+    <div class="form-group">
+        <label for="endereço" class="form-label">Endereço</label>
+        <input type="text" asp-for="Endereco" class="form-control" placeholder="Digite aqui o Endereço">
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-primary">Alterar</button>
+
+    <a class="btn btn-secondary" asp-controller="Usuario" asp-action="Index" role="button">Voltar</a>
+</form>
